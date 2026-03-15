@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Dr. Saumya Bhatia</title>
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="stats.css">
+  <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+  <header class="main-header">
+  <style>
+    
+/* --- General Animations --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* --- Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0c4b8e;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1a73e8;
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+.btn-header {
+    width: 30%;
+    background-color: #1a73e8;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 2rem;
+}
+
+.btn-header:hover {
+    background-color: #0c4b8e;
+}
+/* --- Premium Dark Floating Pill Header --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Bulgy, Soft Pill Shape */
+    padding: 0.8rem 1.5rem; 
+    margin: 20px 4%; 
+    border-radius: 20px; 
+    
+    /* The "Little Dark" Glass Effect (Deep Navy/Slate) */
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15); 
+    
+    position: sticky;
+    top: 20px; 
+    z-index: 1000;
+    animation: headerSlideDown 0.8s ease-out forwards;
+}
+
+@keyframes headerSlideDown {
+    from { transform: translateY(-120%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Logo Layout */
+.logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-img-box { width: 45px; height: 45px; background-color: #1a73e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.75rem; font-weight: 700; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.logo-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+/* White text so it pops against the dark header */
+.logo-text { font-size: 1.5rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
+.logo-text span { color: #1a73e8; }
+
+/* Center Navigation - Reduced Gap */
+.main-header .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem; /* Much tighter gap between items */
+}
+
+/* The visible dots */
+.nav-dot { 
+    color: #475569; /* Subtle dark grey dot */
+    font-size: 1.2rem; 
+    user-select: none; 
+    margin: 0 0.3rem; 
+}
+
+.main-header .nav-item {
+    text-decoration: none;
+    color: #e2e8f0; /* Light grey text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    display: inline-block; 
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+/* Hover: Scale up & turn white */
+.main-header .nav-item:hover { 
+    color: #ffffff; 
+    transform: scale(1.12); 
+}
+
+/* Hover: Growing Underline */
+.main-header .nav-item::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; width: 0%; height: 2px;
+    background-color: #1a73e8;; transition: width 0.3s ease; border-radius: 2px;
+}
+.main-header .nav-item:hover::after { width: 100%; }
+
+/* Right Action: Phone Button */
+.header-actions { display: flex; align-items: center; }
+
+.phone-btn-home {
+    background: linear-gradient(135deg, #0c4b8e 0%, #1a73e8 100%);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.phone-btn {
+    background: linear-gradient(135deg, #0c4b8e 0%, #1a73e8 100%);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
+}
+
+/* Sweeping shine effect for the phone button */
+.phone-btn::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); animation: shineSweep 3s infinite;
+}
+
+.phone-icon { font-size: 1.1rem; }
+/* --- Animated CTA Button --- */
+.animated-btn {
+    background: linear-gradient(135deg, #0c4b8e 0%, #1a73e8 100%);
+    color: white !important;
+    padding: 0.75rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 1rem;
+}
+
+.animated-btn .arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Button lifts up and arrow slides right on hover */
+.animated-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
+}
+
+.animated-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* The continuous sweeping shine effect */
+.animated-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: shineSweep 3s infinite; /* Shines every 3 seconds */
+}
+
+@keyframes shineSweep {
+    0% { left: -100%; }
+    20% { left: 200%; }
+    100% { left: 200%; }
+}
+  </style>
+    <div class="header-top">
+        <a href="index.html" class="logo-container">
+            <div class="logo-img-box"><img src="outside.png"></div>
+            <div class="logo-text">Vidya<span> Dental </span> Clinic</div>
+        </a>
+
+        <!-- MENU ICON MUST BE HERE -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="index.html#about-us" class="nav-item">About Us</a>
+        <a href="index.html#primary-treatments" class="nav-item">Treatments</a>
+        <a href="index.html#testimonials" class="nav-item">Testimonials</a>
+        <a href="index.html#gallery" class="nav-item">Gallery</a>
+        <a href="index.html#contact" class="nav-item">Contact Us</a>
+    </nav>
+
+    <!-- Button always below -->
+    <div class="header-actions">
+        <a href="appointment.html" class="phone-btn">
+            Book an Appointment
+        </a>
+    </div>
+
+</header>
+  <!-- APPOINTMENT PAGE CONTENT -->
+  <div class="appointment-page">
+    
+    <!-- Page Header -->
+    <div class="appointment-header">
+      <div class="appointment-badge">
+        <i class="fas fa-calendar-check"></i>
+        <span>Schedule Your Visit</span>
+      </div>
+      <h1 class="appointment-title">Book an <span>Appointment</span></h1>
+      <p class="appointment-subtitle">
+        Choose your preferred doctor and time slot for a personalized consultation
+      </p>
+    </div>
+
+    <!-- Main Appointment Container -->
+    <div class="appointment-container">
+      
+      <!-- Left Side - Doctor Selection -->
+      <div class="doctors-section">
+        <h2 class="section-title">
+          <i class="fas fa-user-md"></i>
+          Select Doctor
+        </h2>
+        
+        <div class="doctors-grid">
+          
+          <!-- Doctor 1 - Dr. Saumya Bhatia -->
+          <div class="doctor-card" data-doctor-id="1">
+            <div class="doctor-card-inner">
+              <div class="doctor-image">
+                <div class="doctor-avatar"></div>
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Saumya Bhatia</h3>
+                <p class="doctor-specialty">Oral & Maxillofacial Surgeon</p>
+                <div class="doctor-details">
+                  <span class="doctor-exp"><i class="fas fa-star"></i> 15+ years</span>
+                  <span class="doctor-contact"><i class="fas fa-phone-alt"></i> +91 98765 43210</span>
+                </div>
+              </div>
+              <div class="doctor-select">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Doctor 2 - Dr. Rajesh Kumar -->
+          <div class="doctor-card" data-doctor-id="2">
+            <div class="doctor-card-inner">
+              <div class="doctor-image">
+                <div class="doctor-avatar male"></div>
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Rajesh Kumar</h3>
+                <p class="doctor-specialty">Dental Surgeon</p>
+                <div class="doctor-details">
+                  <span class="doctor-exp"><i class="fas fa-star"></i> 12+ years</span>
+                  <span class="doctor-contact"><i class="fas fa-phone-alt"></i> +91 98765 43211</span>
+                </div>
+              </div>
+              <div class="doctor-select">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Doctor 3 - Dr. Priya Sharma -->
+          <div class="doctor-card" data-doctor-id="3">
+            <div class="doctor-card-inner">
+              <div class="doctor-image">
+                <div class="doctor-avatar female"></div>
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Priya Sharma</h3>
+                <p class="doctor-specialty">Periodontist</p>
+                <div class="doctor-details">
+                  <span class="doctor-exp"><i class="fas fa-star"></i> 10+ years</span>
+                  <span class="doctor-contact"><i class="fas fa-phone-alt"></i> +91 98765 43212</span>
+                </div>
+              </div>
+              <div class="doctor-select">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Doctor 4 - Dr. Amit Verma -->
+          <div class="doctor-card" data-doctor-id="4">
+            <div class="doctor-card-inner">
+              <div class="doctor-image">
+                <div class="doctor-avatar male"></div>
+              </div>
+              <div class="doctor-info">
+                <h3 class="doctor-name">Dr. Amit Verma</h3>
+                <p class="doctor-specialty">Orthodontist</p>
+                <div class="doctor-details">
+                  <span class="doctor-exp"><i class="fas fa-star"></i> 8+ years</span>
+                  <span class="doctor-contact"><i class="fas fa-phone-alt"></i> +91 98765 43213</span>
+                </div>
+              </div>
+              <div class="doctor-select">
+                <i class="fas fa-check-circle"></i>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Right Side - Booking Form -->
+      <div class="booking-section">
+        <h2 class="section-title">
+          <i class="fas fa-clock"></i>
+          Appointment Details
+        </h2>
+        
+        <form id="appointmentForm" class="booking-form">
+          
+          <!-- Selected Doctor Display -->
+          <div class="selected-doctor-display" id="selectedDoctorDisplay">
+            <i class="fas fa-user-md"></i>
+            <span>No doctor selected</span>
+          </div>
+          
+          <!-- Date Selection -->
+          <div class="form-group">
+            <label for="appointmentDate">
+              <i class="fas fa-calendar-alt"></i>
+              Select Date
+            </label>
+            <input type="date" id="appointmentDate" class="form-control" min="2026-03-07" required>
+          </div>
+          
+          <!-- Time Slot Selection -->
+          <div class="form-group">
+            <label>
+              <i class="fas fa-clock"></i>
+              Select Time Slot
+            </label>
+            <div class="time-slots" id="timeSlots">
+              <!-- Time slots will be populated by JavaScript -->
+            </div>
+          </div>
+          
+          <!-- Treatment Selection -->
+          <div class="form-group">
+            <label for="treatment">
+              <i class="fas fa-tooth"></i>
+              Select Treatment
+            </label>
+            <select id="treatment" class="form-control" required>
+              <option value="" disabled selected>Choose a treatment</option>
+              <option value="dental-implants">Dental Implants</option>
+              <option value="wisdom-teeth">Wisdom Teeth Removal</option>
+              <option value="jaw-surgery">Jaw Surgery</option>
+              <option value="root-canal">Root Canal Treatment</option>
+              <option value="teeth-whitening">Teeth Whitening</option>
+              <option value="braces">Braces/Orthodontics</option>
+              <option value="gum-treatment">Gum Disease Treatment</option>
+              <option value="consultation">General Consultation</option>
+            </select>
+          </div>
+          
+          <!-- Patient Information -->
+          <div class="patient-info-section">
+            <h3 class="subsection-title">
+              <i class="fas fa-user"></i>
+              Patient Information
+            </h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="patientName">Full Name *</label>
+                <input type="text" id="patientName" class="form-control" placeholder="Enter your full name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="patientAge">Age *</label>
+                <input type="number" id="patientAge" class="form-control" placeholder="Age" min="1" max="120" required>
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="patientEmail">Email *</label>
+                <input type="email" id="patientEmail" class="form-control" placeholder="your@email.com" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="patientPhone">Phone Number *</label>
+                <input type="tel" id="patientPhone" class="form-control" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="patientAddress">Address</label>
+              <input type="text" id="patientAddress" class="form-control" placeholder="Your address">
+            </div>
+            
+            <div class="form-group">
+              <label for="patientMessage">Specific Message/Concerns</label>
+              <textarea id="patientMessage" class="form-control" rows="3" placeholder="Please share any specific concerns or questions..."></textarea>
+            </div>
+          </div>
+          
+          <!-- Additional Options -->
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" id="whatsappUpdates">
+              <span class="checkbox-custom"></span>
+              Receive updates on WhatsApp
+            </label>
+            
+            <label class="checkbox-label">
+              <input type="checkbox" id="firstVisit" checked>
+              <span class="checkbox-custom"></span>
+              This is my first visit
+            </label>
+          </div>
+          
+          <!-- Submit Button -->
+          <div class="form-actions">
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-calendar-check"></i>
+              Confirm Appointment
+            </button>
+            <button type="button" class="reset-btn" id="resetForm">
+              <i class="fas fa-redo-alt"></i>
+              Reset
+            </button>
+          </div>
+          
+        </form>
+      </div>
+      
+    </div>
+    
+   <!-- FLOATING ACTION BUTTONS -->
+<div class="floating-buttons">
+  <a href="https://api.whatsapp.com/send/?phone=919555998900&text&type=phone_number&app_absent=0" class="floating-btn whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">Chat on WhatsApp</span>
+  </a>
+  <a href="appointment.html" class="floating-btn book-float">
+    <i class="fas fa-calendar-check"></i>
+    <span class="floating-tooltip">Book Appointment</span>
+  </a>
+</div>
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+});
+
+document.getElementById("menu-toggle").addEventListener("click", function() {
+    document.getElementById("nav-links").classList.toggle("active");
+});
+document.addEventListener("DOMContentLoaded", function() {
+
+    const menuBtn = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-links");
+
+    menuBtn.addEventListener("click", function() {
+        navMenu.classList.toggle("active");
+    });
+
+});
+</script>
+
+  <!-- JavaScript Files -->
+  <script src="stats.js"></script>
+  <script src="appointment.js"></script>
+</body>
+</html>

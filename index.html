@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidya Maxillofacial Center | Complete page with stats</title>
+  <!-- External fonts & icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <!-- External CSS files -->
+  <link rel="stylesheet" href="doctor-hero.css">
+  <link rel="stylesheet" href="stats.css">
+</head>
+
+<header class="main-header">
+  <style>
+    
+/* --- General Animations --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* --- Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0c4b8e;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1a73e8;
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+.btn-header {
+    width: 30%;
+    background-color: #1a73e8;
+    color: white;
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 2rem;
+}
+
+.btn-header:hover {
+    background-color: #0c4b8e;
+}
+/* --- Premium Dark Floating Pill Header --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Bulgy, Soft Pill Shape */
+    padding: 0.8rem 1.5rem; 
+    margin: 20px 4%; 
+    border-radius: 20px; 
+    
+    /* The "Little Dark" Glass Effect (Deep Navy/Slate) */
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.15); 
+    
+    position: sticky;
+    top: 20px; 
+    z-index: 1000;
+    animation: headerSlideDown 0.8s ease-out forwards;
+}
+
+@keyframes headerSlideDown {
+    from { transform: translateY(-120%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Logo Layout */
+.logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-img-box { width: 45px; height: 45px; background-color: #1a73e8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.75rem; font-weight: 700; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.logo-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+/* White text so it pops against the dark header */
+.logo-text { font-size: 1.5rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; }
+.logo-text span { color: #1a73e8; }
+
+/* Center Navigation - Reduced Gap */
+.main-header .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem; /* Much tighter gap between items */
+}
+
+/* The visible dots */
+.nav-dot { 
+    color: #475569; /* Subtle dark grey dot */
+    font-size: 1.2rem; 
+    user-select: none; 
+    margin: 0 0.3rem; 
+}
+
+.main-header .nav-item {
+    text-decoration: none;
+    color: #e2e8f0; /* Light grey text */
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.3rem 0.5rem;
+    display: inline-block; 
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+/* Hover: Scale up & turn white */
+.main-header .nav-item:hover { 
+    color: #ffffff; 
+    transform: scale(1.12); 
+}
+
+/* Hover: Growing Underline */
+.main-header .nav-item::after {
+    content: ''; position: absolute; bottom: -2px; left: 0; width: 0%; height: 2px;
+    background-color: #1a73e8;; transition: width 0.3s ease; border-radius: 2px;
+}
+.main-header .nav-item:hover::after { width: 100%; }
+
+/* Right Action: Phone Button */
+.header-actions { display: flex; align-items: center; }
+
+.phone-btn-home {
+    background: linear-gradient(135deg, #0c4b8e 0%, #1a73e8 100%);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.phone-btn {
+    background: linear-gradient(135deg, #0c4b8e 0%, #1a73e8 100%);
+    color: white !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
+}
+
+/* Sweeping shine effect for the phone button */
+.phone-btn::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg); animation: shineSweep 3s infinite;
+}
+
+.phone-icon { font-size: 1.1rem; }
+/* --- Animated CTA Button --- */
+.animated-btn {
+    background: linear-gradient(135deg, #0c4b8e 0%, #1a73e8 100%);
+    color: white !important;
+    padding: 0.75rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(26, 115, 232, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 1rem;
+}
+
+.animated-btn .arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Button lifts up and arrow slides right on hover */
+.animated-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(26, 115, 232, 0.35);
+}
+
+.animated-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* The continuous sweeping shine effect */
+.animated-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: shineSweep 3s infinite; /* Shines every 3 seconds */
+}
+
+@keyframes shineSweep {
+    0% { left: -100%; }
+    20% { left: 200%; }
+    100% { left: 200%; }
+}
+  </style>
+    <div class="header-top">
+        <a href="index.html" class="logo-container">
+            <div class="logo-img-box"><img src="outside.png"></div>
+            <div class="logo-text">Vidya<span> Dental </span> Clinic</div>
+        </a>
+
+        <!-- MENU ICON MUST BE HERE -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="#about-us" class="nav-item">About Us</a>
+        <a href="#primary-treatments" class="nav-item">Treatments</a>
+        <a href="#testimonials" class="nav-item">Testimonials</a>
+        <a href="#gallery" class="nav-item">Gallery</a>
+        <a href="#contact" class="nav-item">Contact Us</a>
+    </nav>
+
+    <!-- Button always below -->
+    <div class="header-actions">
+        <a href="appointment.html" class="phone-btn">
+            Book an Appointment
+        </a>
+    </div>
+
+</header>
+<body>
+  <body>
+  <!-- PASTE HEADER RIGHT HERE -->
+
+  <!-- HERO SECTION -->
+  <div class="hero-wrapper">
+    <!-- ... existing hero code ... -->
+  </div>
+      <!-- HERO SECTION -->
+  <div class="hero-wrapper">
+    <section class="doctor-hero" aria-label="Vidya Maxillofacial Center">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <i class="fas fa-stethoscope"></i> 
+          <span>Internal medicine · 15+ years experience</span>
+        </div>
+        <h1 class="hero-title">
+          Compassionate care, <span>proven expertise</span>
+        </h1>
+        <p class="hero-description">
+          Board‑certified physician dedicated to listening, preventing, and healing. 
+          Your health, my commitment — evidence‑based and human.
+        </p>
+
+        <div class="trust-strip">
+          <div class="trust-item">
+            <i class="fas fa-circle-check"></i> <span>Top doctor award 2024</span>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-clock"></i> <span>Same‑week appointments</span>
+          </div>
+          <div class="trust-item">
+            <i class="fas fa-location-dot"></i> <span>Upper East Side</span>
+          </div>
+        </div>
+
+        <div class="cta-group">
+          <a class="btn-primary" role="button" tabindex="0" aria-label="request appointment">
+            <i class="fas fa-calendar-check"></i> Book online
+          </a>
+          <a class="btn-outline" role="button" tabindex="0">
+            <i class="fas fa-phone-alt"></i> (212) 555 9320
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="image-frame">
+          <div class="doctor-img" role="img" aria-label="Vidya Maxillofacial Center"></div>
+        </div>
+        <div class="specialty-tag">
+          <i class="fas fa-heart-pulse"></i>  Diplomate, ABIM
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- STATISTICS SECTION (CONNECTED) -->
+  <div class="stats-section">
+    <div class="stats-grid">
+      
+      <div class="stat-card">
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-label">Years of Experience</div>
+        <div class="stat-icon">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-number" data-target="2000">0</div>
+        <div class="stat-label">Happy Patients</div>
+        <div class="stat-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-number" data-target="500">0</div>
+        <div class="stat-label">Successful Surgeries</div>
+        <div class="stat-icon">
+          <i class="fas fa-hand-holding-heart"></i>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-number" data-target="10">0</div>
+        <div class="stat-label">Treatments Offered</div>
+        <div class="stat-icon">
+          <i class="fas fa-pills"></i>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+   <!-- PASTE ABOUT SECTION RIGHT HERE -->
+  <div class="about-section" id="about-us">
+    <div class="about-container">
+      
+      <!-- Left side - Image -->
+      <div class="about-image-wrapper">
+        <div class="about-image-frame">
+          <div class="about-doctor-img" role="img" aria-label="Dr. Saumya Bhatia - Oral & Maxillofacial Surgeon"></div>
+        </div>
+        <div class="about-specialty-badge">
+          <i class="fas fa-tooth"></i> Oral & Maxillofacial Surgeon
+        </div>
+      </div>
+      
+      <!-- Right side - Content -->
+      <div class="about-content">
+        <div class="about-badge">
+          <i class="fas fa-award"></i>
+          <span>Best Oral & Maxillofacial Surgeon in Lucknow</span>
+        </div>
+        
+        <h2 class="about-title">Dr. Saumya Bhatia</h2>
+        
+        <p class="about-description">
+          With over 12 years of specialized experience in oral and maxillofacial surgery, 
+          Dr. Saumya Bhatia is renowned for her precision, compassionate care, and 
+          expertise in complex dental and facial surgeries. She combines advanced 
+          surgical techniques with a gentle approach to ensure optimal patient outcomes.
+        </p>
+        
+        <div class="about-credentials">
+          <div class="credential-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>MDS, Oral & Maxillofacial Surgery</span>
+          </div>
+          <div class="credential-item">
+            <i class="fas fa-certificate"></i>
+            <span>Fellow, International Association of Oral Surgeons</span>
+          </div>
+          <div class="credential-item">
+            <i class="fas fa-trophy"></i>
+            <span>"Best Surgeon 2023" - Lucknow Medical Excellence Awards</span>
+          </div>
+        </div>
+        
+        <div class="about-cta">
+          <a href="#" class="about-btn-primary" role="button">
+            <i class="fas fa-calendar-check"></i> Book Appointment
+          </a>
+          <a href="#" class="about-btn-outline" role="button">
+            <i class="fas fa-user-md"></i> Learn More About Dr. Bhatia
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    <div class="treatments-section">
+    <div class="treatments-header">
+      <div class="treatments-badge">
+        <i class="fas fa-tooth"></i>
+        <span>Specialized Procedures</span>
+      </div>
+      <h2 class="treatments-title" id="primary-treatments">Primary <span>Treatments</span></h2>
+      <p class="treatments-subtitle">
+        Advanced surgical solutions with precision care and proven outcomes
+      </p>
+    </div>
+
+    <div class="treatments-grid">
+      
+      <!-- Treatment Card 1 - Dental Implants -->
+      <div class="treatment-card">
+        <div class="treatment-image" style="background-image: url('https://www.drpaulsdentalclinic.com/wp-content/uploads/2024/06/oral-surgery-Why-us.webp');">
+          <div class="treatment-overlay">
+            <div class="treatment-content">
+              <h3 class="treatment-name">Dental Implants</h3>
+              <p class="treatment-desc">Permanent tooth replacement with natural-looking results</p>
+              <span class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Treatment Card 2 - Wisdom Teeth -->
+      <div class="treatment-card">
+        <div class="treatment-image" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+          <div class="treatment-overlay">
+            <div class="treatment-content">
+              <h3 class="treatment-name">Wisdom Teeth Removal</h3>
+              <p class="treatment-desc">Safe and comfortable extraction with minimal recovery</p>
+              <span class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Treatment Card 3 - Jaw Surgery -->
+      <div class="treatment-card">
+        <div class="treatment-image" style="background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+          <div class="treatment-overlay">
+            <div class="treatment-content">
+              <h3 class="treatment-name">Orthognathic Surgery</h3>
+              <p class="treatment-desc">Corrective jaw surgery for improved function and aesthetics</p>
+              <span class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Treatment Card 4 - Bone Grafting -->
+      <div class="treatment-card">
+        <div class="treatment-image" style="background-image: url('https://static.vecteezy.com/system/resources/previews/040/755/308/non_2x/a-dental-doctor-wearing-blue-gloves-and-a-mask-holds-a-dental-model-of-the-upper-and-lower-jaws-and-a-dental-mirror-photo.jpg');">
+          <div class="treatment-overlay">
+            <div class="treatment-content">
+              <h3 class="treatment-name">Bone Grafting</h3>
+              <p class="treatment-desc">Restoring bone density for successful implant placement</p>
+              <span class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Treatment Card 5 - Facial Trauma -->
+      <div class="treatment-card">
+        <div class="treatment-image" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+          <div class="treatment-overlay">
+            <div class="treatment-content">
+              <h3 class="treatment-name">Facial Trauma</h3>
+              <p class="treatment-desc">Emergency repair of facial injuries and fractures</p>
+              <span class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Treatment Card 6 - Cleft Surgery -->
+      <div class="treatment-card">
+        <div class="treatment-image" style="background-image: url('https://tse3.mm.bing.net/th/id/OIP.1o9LzlZ3d-n2M1WOMQd58QHaE7?rs=1&pid=ImgDetMain&o=7&rm=3');">
+          <div class="treatment-overlay">
+            <div class="treatment-content">
+              <h3 class="treatment-name">Cleft Lip & Palate</h3>
+              <p class="treatment-desc">Specialized reconstructive surgery for children and adults</p>
+              <span class="treatment-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="treatments-footer">
+      <a href="#" class="treatments-btn-outline">
+        View All Treatments <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+  <!-- PASTE FEATURES SECTION RIGHT HERE -->
+  <div class="features-section">
+    <div class="features-header">
+      <div class="features-badge">
+        <i class="fas fa-star"></i>
+        <span>Why Choose Us</span>
+      </div>
+      <h2 class="features-title">Our <span>Features</span></h2>
+      <p class="features-subtitle">
+        Excellence in every aspect of your surgical journey
+      </p>
+    </div>
+
+    <div class="features-grid">
+      
+      <!-- Feature 1 - Advanced Technology -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">
+            <i class="fas fa-microscope"></i>
+          </div>
+          <div class="feature-icon-glow"></div>
+        </div>
+        <h3 class="feature-title">Advanced Technology</h3>
+        <p class="feature-description">
+          Equipped with the latest diagnostic and surgical tools to ensure precise treatments, 
+          minimal discomfort, and faster healing times.
+        </p>
+        <div class="feature-line"></div>
+      </div>
+      
+      <!-- Feature 2 - Compassionate Care -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <div class="feature-icon-glow"></div>
+        </div>
+        <h3 class="feature-title">Compassionate Care</h3>
+        <p class="feature-description">
+          We listen to your concerns and tailor every treatment plan to your specific needs, 
+          ensuring you always feel comfortable and understood.
+        </p>
+        <div class="feature-line"></div>
+      </div>
+      
+      <!-- Feature 3 - Highest Safety Standards -->
+      <div class="feature-card">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="feature-icon-glow"></div>
+        </div>
+        <h3 class="feature-title">Highest Safety Standards</h3>
+        <p class="feature-description">
+          We maintain strict sterilization protocols and adhere to international safety 
+          guidelines for every procedure we perform.
+        </p>
+        <div class="feature-line"></div>
+      </div>
+      
+    </div>
+    
+    <div class="features-footer">
+      <div class="features-stats">
+        <div class="features-stat-item">
+          <span class="features-stat-number">98%</span>
+          <span class="features-stat-label">Patient Satisfaction</span>
+        </div>
+        <div class="features-stat-divider"></div>
+        <div class="features-stat-item">
+          <span class="features-stat-number">5000+</span>
+          <span class="features-stat-label">Procedures Done</span>
+        </div>
+        <div class="features-stat-divider"></div>
+        <div class="features-stat-item">
+          <span class="features-stat-number">15+</span>
+          <span class="features-stat-label">Years Experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASTE GALLERY SECTION RIGHT HERE -->
+  <div class="gallery-section" id="gallery">
+    <div class="gallery-header">
+      <div class="gallery-badge">
+        <i class="fas fa-camera-retro"></i>
+        <span>Visual Journey</span>
+      </div>
+      <h2 class="gallery-title">See The <span>Transformation</span></h2>
+      <p class="gallery-subtitle">
+        Real results and our state-of-the-art facility
+      </p>
+    </div>
+
+    <!-- Before & After Section (High Impact) -->
+    <div class="ba-section">
+      <h3 class="ba-title">Before <span>&</span> After</h3>
+      
+      <div class="ba-grid">
+        
+        <!-- Case 1 -->
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-image before">
+              <img src="1st b.jpg" alt="Before treatment">
+              <div class="ba-label before-label">Before</div>
+              <div class="ba-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+            <div class="ba-arrow">
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+            <div class="ba-image after">
+              <img src="1st a.jpg" alt="After treatment">
+              <div class="ba-label after-label">After</div>
+              <div class="ba-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="ba-case-info">
+            <span class="ba-case-name">Dental Implants</span>
+            <span class="ba-case-date">2024</span>
+          </div>
+        </div>
+        
+        <!-- Case 2 -->
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-image before">
+              <img src="2nd b.jpg" alt="Before treatment">
+              <div class="ba-label before-label">Before</div>
+              <div class="ba-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+            <div class="ba-arrow">
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+            <div class="ba-image after">
+              <img src="2nd a.jpg" alt="After treatment">
+              <div class="ba-label after-label">After</div>
+              <div class="ba-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="ba-case-info">
+            <span class="ba-case-name">Wisdom Teeth</span>
+            <span class="ba-case-date">2023</span>
+          </div>
+        </div>
+        
+        <!-- Case 3 -->
+        <div class="ba-card">
+          <div class="ba-images">
+            <div class="ba-image before">
+              <img src="3 b.jpg" alt="Before treatment">
+              <div class="ba-label before-label">Before</div>
+              <div class="ba-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+            <div class="ba-arrow">
+              <i class="fas fa-long-arrow-alt-right"></i>
+            </div>
+            <div class="ba-image after">
+              <img src="3 a.jpg" alt="After treatment">
+              <div class="ba-label after-label">After</div>
+              <div class="ba-overlay">
+                <i class="fas fa-search-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="ba-case-info">
+            <span class="ba-case-name">Jaw Surgery</span>
+            <span class="ba-case-date">2024</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Clinic Gallery Section -->
+    <div class="clinic-gallery">
+      <h3 class="clinic-gallery-title">Our <span>Clinic</span></h3>
+      
+      <div class="clinic-grid">
+        
+        <!-- Item 1 - Large -->
+        <div class="clinic-item large">
+          <img src="lab.png" alt="Modern clinic reception">
+          <div class="clinic-item-overlay">
+            <div class="clinic-item-content">
+              <h4>Modern Reception</h4>
+              <p>Warm & welcoming atmosphere</p>
+              <div class="clinic-item-link">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 2 - Small -->
+        <div class="clinic-item small">
+          <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Operating room">
+          <div class="clinic-item-overlay">
+            <div class="clinic-item-content">
+              <h4>State-of-art OT</h4>
+              <p>Advanced surgical suite</p>
+              <div class="clinic-item-link">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 3 - Small -->
+        <div class="clinic-item small">
+          <img src="main.png" alt="Consultation room">
+          <div class="clinic-item-overlay">
+            <div class="clinic-item-content">
+              <h4>Consultation Room</h4>
+              <p>Private & comfortable</p>
+              <div class="clinic-item-link">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 4 - Small -->
+        <div class="clinic-item small">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sterilization area">
+          <div class="clinic-item-overlay">
+            <div class="clinic-item-content">
+              <h4>Sterilization Zone</h4>
+              <p>Highest safety protocols</p>
+              <div class="clinic-item-link">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 5 - Small -->
+        <div class="clinic-item small">
+          <img src="https://cdn.getmidnight.com/eb62f6b9306db575c2d596b1279627a4/2024/05/Lighting-of-a-Luxury-Aesthetic-Clinic.webp" alt="Recovery room">
+          <div class="clinic-item-overlay">
+            <div class="clinic-item-content">
+              <h4>Recovery Suite</h4>
+              <p>Peaceful healing space</p>
+              <div class="clinic-item-link">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 6 - Large -->
+        <div class="clinic-item large">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Dental chair">
+          <div class="clinic-item-overlay">
+            <div class="clinic-item-content">
+              <h4>Treatment Rooms</h4>
+              <p>Latest dental technology</p>
+              <div class="clinic-item-link">
+                <i class="fas fa-plus-circle"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="gallery-footer">
+      <a href="#" class="gallery-btn">
+        View Full Gallery <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- PASTE QUOTE, TESTIMONIALS & CONTACT SECTIONS RIGHT HERE -->
+  
+  <!-- QUOTE SECTION -->
+  <div class="quote-section">
+    <div class="quote-container">
+      <div class="quote-mark left">"</div>
+      <div class="quote-content">
+        <p class="quote-text">You're never fully dressed without a smile.</p>
+        <div class="quote-author">
+          <span class="quote-author-name">- Martin Charnin</span>
+          <span class="quote-author-title">Lyricist & Director</span>
+        </div>
+      </div>
+      <div class="quote-mark right">"</div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS SECTION -->
+  <div class="testimonials-section" id="testimonials">
+    <div class="testimonials-header">
+      <div class="testimonials-badge">
+        <i class="fas fa-star"></i>
+        <span>Patient Stories</span>
+      </div>
+      <h2 class="testimonials-title">What Our <span>Patients Say</span></h2>
+      <p class="testimonials-subtitle">
+        Real experiences from people whose smiles we've transformed
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">
+          "Dr. Bhatia and her team are absolutely amazing! I was nervous about my wisdom tooth removal, but they made the entire experience comfortable and pain-free. The recovery was faster than I expected. Highly recommend!"
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+          </div>
+          <div class="testimonial-author-info">
+            <h4>Sarah Johnson</h4>
+            <p>Dental Implants</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card featured">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">
+          "I had complex jaw surgery and was worried about the outcome. Dr. Bhatia's expertise and compassionate care made all the difference. Not only is my jaw function better, but my confidence has soared. Forever grateful!"
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+          </div>
+          <div class="testimonial-author-info">
+            <h4>Michael Chen</h4>
+            <p>Orthognathic Surgery</p>
+          </div>
+        </div>
+        <div class="testimonial-featured-badge">
+          <i class="fas fa-crown"></i> Featured Story
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">
+          "The team at this clinic is top-notch! From the moment I walked in, I felt welcomed. The dental implant procedure was smooth, and my new tooth looks completely natural. Best decision I ever made!"
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Sharma">
+          </div>
+          <div class="testimonial-author-info">
+            <h4>Priya Sharma</h4>
+            <p>Dental Implants</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="testimonials-stats">
+      <div class="testimonials-stat-item">
+        <span class="testimonials-stat-number">500+</span>
+        <span class="testimonials-stat-label">5-Star Reviews</span>
+      </div>
+      <div class="testimonials-stat-divider"></div>
+      <div class="testimonials-stat-item">
+        <span class="testimonials-stat-number">98%</span>
+        <span class="testimonials-stat-label">Would Recommend</span>
+      </div>
+      <div class="testimonials-stat-divider"></div>
+      <div class="testimonials-stat-item">
+        <span class="testimonials-stat-number">15+</span>
+        <span class="testimonials-stat-label">Years of Trust</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div class="contact-section" id="contact">
+    <div class="contact-header">
+      <div class="contact-badge">
+        <i class="fas fa-phone-alt"></i>
+        <span>Get In Touch</span>
+      </div>
+      <h2 class="contact-title">Contact <span>Us</span></h2>
+      <p class="contact-subtitle">
+        We're here to answer your questions and schedule your consultation
+      </p>
+    </div>
+
+    <div class="contact-container">
+      
+      <!-- Left Side - Contact Form -->
+      <div class="contact-form-wrapper">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" placeholder="Your Full Name" required>
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required>
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="form-group">
+            <select id="service" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="implants">Dental Implants</option>
+              <option value="wisdom">Wisdom Teeth Removal</option>
+              <option value="jaw">Jaw Surgery</option>
+              <option value="consultation">Initial Consultation</option>
+              <option value="other">Other</option>
+            </select>
+            <i class="fas fa-tooth"></i>
+          </div>
+          <div class="form-group full-width">
+            <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+            <i class="fas fa-comment"></i>
+          </div>
+          <button type="submit" class="contact-submit-btn">
+            Send Message <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Right Side - Contact Details -->
+      <div class="contact-details-wrapper">
+        
+        <div class="contact-details-card">
+          <h3 class="contact-details-title">Reach Us Directly</h3>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Clinic Location</h4>
+              <p>123 Medical Plaza, Hazratganj<br>Lucknow, Uttar Pradesh 226001</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Phone Numbers</h4>
+              <p>+91 98765 43210 <span class="contact-info-small">(Appointments)</span><br>
+              +91 98765 43211 <span class="contact-info-small">(Emergency)</span></p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Email Us</h4>
+              <p>info@drbhatiaclinic.com<br>
+              appointments@drbhatiaclinic.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-info-content">
+              <h4>Working Hours</h4>
+              <p>Mon - Fri: 9:00 AM - 7:00 PM<br>
+              Saturday: 10:00 AM - 4:00 PM<br>
+              Sunday: Closed</p>
+            </div>
+          </div>
+          
+          <div class="contact-social">
+            <h4>Follow Us</h4>
+            <div class="contact-social-icons">
+              <a href="#" class="contact-social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="contact-social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="contact-social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="contact-social-icon"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="contact-social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Full Screen Map -->
+    <div class="contact-map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.815383717812!2d80.946206!3d26.846693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd8a1b8b8b8b%3A0x1b8b8b8b8b8b8b8b!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+      <div class="map-overlay">
+        <div class="map-badge">
+          <i class="fas fa-map-pin"></i> Visit Our Clinic
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- FLOATING ACTION BUTTONS -->
+<div class="floating-buttons">
+  <a href="https://api.whatsapp.com/send/?phone=919555998900&text&type=phone_number&app_absent=0" class="floating-btn whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">Chat on WhatsApp</span>
+  </a>
+  <a href="appointment.html" class="floating-btn book-float">
+    <i class="fas fa-calendar-check"></i>
+    <span class="floating-tooltip">Book Appointment</span>
+  </a>
+</div>
+<script>
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", function() {
+    navLinks.classList.toggle("active");
+});
+
+document.getElementById("menu-toggle").addEventListener("click", function() {
+    document.getElementById("nav-links").classList.toggle("active");
+});
+document.addEventListener("DOMContentLoaded", function() {
+
+    const menuBtn = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-links");
+
+    menuBtn.addEventListener("click", function() {
+        navMenu.classList.toggle("active");
+    });
+
+});
+</script>
+  <!-- External JavaScript files -->
+  <script src="doctor-hero.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery & Results | Dr. Saumya Bhatia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <header class="main-header">
+
+    <div class="header-top">
+        <a href="index.html" class="logo-container">
+            <div class="logo-img-box"><img src="blur_edges.png"></div>
+            <div class="logo-text">Dr.<span>Bhatia</span> Clinic</div>
+        </a>
+
+        <!-- MENU ICON MUST BE HERE -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-links" id="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About Us</a>
+        <a href="index.html#treatments" class="nav-item">Treatments</a>
+        <a href="gallery.html" class="nav-item">Gallery</a>
+        <a href="contact.html" class="nav-item">Contact Us</a>
+    </nav>
+
+    <!-- Button always below -->
+    <div class="header-actions">
+        <a href="appointment.html" class="phone-btn">
+            Book an Appointment
+        </a>
+    </div>
+
+</header>
+
+
+    <section class="inner-hero animate-on-scroll">
+        <div class="inner-hero-content">
+            <h1>OUR GALLERY</h1>
+            <p>Dr. Saumya Bhatia | Real Results & Transformations</p>
+        </div>
+    </section>
+
+    <section class="gallery-intro animate-on-scroll">
+        <div class="container about-split">
+            <div class="about-text-content" style="flex: 1;">
+                <h4 class="qualifications" style="margin-bottom: 0.5rem;">Precision & Perfection</h4>
+                <h2>Meet Dr. Saumya Bhatia</h2>
+                <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                    With an unwavering commitment to surgical excellence, Dr. Bhatia combines advanced medical science with an artistic eye. Her approach ensures that every procedure not only restores critical function but also harmonizes facial aesthetics. 
+                </p>
+                <p style="color: var(--text-light); line-height: 1.8;">
+                    From complex jaw realignments to subtle facial contouring, her surgical precision has changed the lives of thousands of patients, giving them the confidence to smile again.
+                </p>
+            </div>
+            
+            <div class="collage-wrapper animate-on-scroll">
+                <div class="collage-main"><img src="bhatia.png" height="400" width="300" ></div>
+                <div class="collage-sub collage-top-right"><img src="2024-09-10.webp" height="210" width="300"></div>
+                <div class="collage-sub collage-bottom-left"><img src="about.png" height="210" width="300"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section animate-on-scroll">
+        <div class="container text-center">
+            <div class="story-box">
+                <span class="quote-mark">“</span>
+                <p>
+                    Each image tells a unique story of transformation. We hope these results give you a clear idea of what to expect from jaw repositioning and maxillofacial surgery with <strong>Dr. Saumya Bhatia</strong>. 
+                </p>
+                <p>
+                    Whether you are looking to correct a misaligned jaw, restore proper function, or enhance the appearance of your jawline, Dr. Bhatia has the expertise to help you achieve your desired results. We invite you to browse through our gallery and see the transformations for yourself. If you have any questions or would like to schedule a consultation, please don't hesitate to reach out.
+                </p>
+                <a href="index.html#contact" class="btn-about" style="margin-top: 2rem;">Contact Our Clinic</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section animate-on-scroll" style="padding-bottom: 3rem;">
+        <div class="gallery-header">
+            <h2>Our <span>State-of-the-Art</span> Facility</h2>
+            <p>Designed for your comfort, safety, and a seamless recovery experience.</p>
+        </div>
+
+        <div class="slider-container">
+            <button class="slider-btn left" onclick="slideGallery('facility-track', -1)">&#10094;</button>
+            
+            <div class="slider-track" id="facility-track">
+                <div class="clinic-item"><div class="clinic-img-placeholder">[Operating Room Photo]</div><div class="clinic-overlay"><h4>Advanced Operatory</h4></div></div>
+                <div class="clinic-item"><div class="clinic-img-placeholder">[Waiting Area Photo]</div><div class="clinic-overlay"><h4>Patient Lounge</h4></div></div>
+                <div class="clinic-item"><div class="clinic-img-placeholder">[Consultation Room]</div><div class="clinic-overlay"><h4>Private Consultation</h4></div></div>
+                <div class="clinic-item"><div class="clinic-img-placeholder">[Surgical Team Photo]</div><div class="clinic-overlay"><h4>Expert Surgical Team</h4></div></div>
+                <div class="clinic-item"><div class="clinic-img-placeholder">[3D Imaging Machine]</div><div class="clinic-overlay"><h4>CBCT 3D Imaging</h4></div></div>
+            </div>
+
+            <button class="slider-btn right" onclick="slideGallery('facility-track', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="gallery-section animate-on-scroll" style="background-color: var(--bg-light); padding-top: 5rem;">
+        <div class="gallery-header">
+            <h2>Before & After <span>Transformations</span></h2>
+            <p>Real patients, real results. Slide to see the difference.</p>
+        </div>
+
+        <div class="slider-container">
+            <button class="slider-btn left" onclick="slideGallery('bna-track-gallery', -1)">&#10094;</button>
+            
+            <div class="slider-track" id="bna-track">
+                    <div class="bna-card">
+                        <div class="bna-images">
+                            <div class="bna-img before-img"><img src="bef.jpg" width="150" height="200"><span class="bna-badge before-badge">Before</span></div>
+                            <div class="bna-img after-img"><img src="after.jpg" height="200", width="150"><span class="bna-badge after-badge">After</span></div>
+                        </div>
+                        <div class="bna-caption">Corrective Jaw Surgery</div>
+                    </div>
+
+                    <div class="bna-card">
+                        <div class="bna-images">
+                            <div class="bna-img before-img"><img src="chi.jpg" height="200" width="150"><span class="bna-badge before-badge">Before</span></div>
+                            <div class="bna-img after-img"><img src="aft.jpg"height = "200" width="150"><span class="bna-badge after-badge">After</span></div>
+                        </div>
+                        <div class="bna-caption">Genioplasty (Chin Reshaping)</div>
+                    </div>
+
+                    <div class="bna-card">
+                        <div class="bna-images">
+                            <div class="bna-img before-img"><img src="frecons.jpg"height = "200" width="150"><span class="bna-badge before-badge">Before</span></div>
+                            <div class="bna-img after-img"><img src="fafter.jpg"height = "200" width="150"><span class="bna-badge after-badge">After</span></div>
+                        </div>
+                        <div class="bna-caption">Facial Trauma Reconstruction</div>
+                    </div>
+
+                <div class="bna-card">
+                    <div class="bna-images">
+                        <div class="bna-img before-img">[Before Photo]<span class="bna-badge before-badge">Before</span></div>
+                        <div class="bna-img after-img">[After Photo]<span class="bna-badge after-badge">After</span></div>
+                    </div>
+                    <div class="bna-caption">Complex Dental Implants</div>
+                </div>
+            </div>
+
+            <button class="slider-btn right" onclick="slideGallery('bna-track-gallery', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dr. Saumya Bhatia Clinic. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
